@@ -4,7 +4,7 @@ import random
 
 # Load environment variables
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-X_BEARER_TOKEN = os.getenv("API_KEY")  # Using API Key as Bearer Token
+X_BEARER_TOKEN = os.getenv("BEARER_TOKEN")  # Using API Key as Bearer Token
 
 # X (Twitter) API endpoint
 X_POST_URL = "https://api.twitter.com/2/tweets"
