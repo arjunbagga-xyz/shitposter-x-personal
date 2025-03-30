@@ -12,7 +12,7 @@ ACCESS_TOKEN_SECRET = os.getenv("ACCESS_TOKEN_SECRET")
 
 # Google Gemini API key
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent"
+GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent"
 
 # Authenticate with X (OAuth 1.0a)
 auth = tweepy.OAuth1UserHandler(API_KEY, API_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
@@ -66,7 +66,27 @@ def generate_shitpost():
         "x-goog-api-key": GEMINI_API_KEY  # Explicitly pass API key in headers
     }
     
-    payload = {"contents": [{"parts": [{"text": prompt}]}]}
+    payload = {
+    "contents": [
+        {
+            "role": "user",
+            "parts": [
+                {
+                    "text": prompt
+                }
+            ]
+        }
+    ],
+    "generationConfig": {
+        "temperature": 1.5,
+        "responseMimeType": "text/plain"
+    },
+    "tools": [
+        {
+            "googleSearch": {}
+        }
+    ]
+}
     
     response = requests.post(GEMINI_API_URL, headers=headers, json=payload)
     
