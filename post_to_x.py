@@ -85,7 +85,7 @@ def generate_shitpost():
             "googleSearch": {}
         }
     ]
-}
+    }
 
     
     response = requests.post(GEMINI_API_URL, headers=headers, json=payload)
