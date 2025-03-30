@@ -52,7 +52,10 @@ def generate_shitpost():
         f"Make it insightful and humorous. Your response should be just the post, nothing else (under 200 characters and no hashtags)."
     )
     
-    headers = {"Content-Type": "application/json"}
+    headers = {
+        "Content-Type": "application/json",
+        "x-goog-api-key": GEMINI_API_KEY  # Explicitly pass API key in headers
+    }
     
     payload = {"contents": [{"parts": [{"text": prompt}]}]}
     
