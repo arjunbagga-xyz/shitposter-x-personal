@@ -18,6 +18,16 @@ GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini
 auth = tweepy.OAuth1UserHandler(API_KEY, API_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 api = tweepy.API(auth, wait_on_rate_limit=True)
 
+# Check which API version is being used
+print(api.auth.access_token)  # Should not be None
+
+client = tweepy.Client(
+    bearer_token=os.getenv("BEARER_TOKEN"),
+    consumer_key=API_KEY,
+    consumer_secret=API_SECRET,
+    access_token=ACCESS_TOKEN,
+    access_token_secret=ACCESS_TOKEN_SECRET
+)
 
 # Generate post with Gemini API
 
@@ -94,5 +104,5 @@ def post_to_x():
 
 # Post to X
 post = generate_shitpost()
-api.update_status(post)
+client.create_tweet(text=post)
 print(f"Posted to X: {post}")
