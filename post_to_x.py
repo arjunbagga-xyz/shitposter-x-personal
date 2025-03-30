@@ -1,6 +1,7 @@
 import os
 import requests
 import random
+import tweepy
 
 
 # X API credentials from GitHub Secrets
