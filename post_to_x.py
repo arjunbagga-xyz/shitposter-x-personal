@@ -66,10 +66,9 @@ def generate_shitpost():
         "x-goog-api-key": GEMINI_API_KEY  # Explicitly pass API key in headers
     }
     
-    payload = {
+   payload = {
     "contents": [
         {
-            "role": "user",
             "parts": [
                 {
                     "text": prompt
@@ -87,6 +86,7 @@ def generate_shitpost():
         }
     ]
 }
+
     
     response = requests.post(GEMINI_API_URL, headers=headers, json=payload)
     
