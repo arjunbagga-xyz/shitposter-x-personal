@@ -15,8 +15,7 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent"
 
 # Authenticate with X (OAuth 1.0a)
-auth = tweepy.OAuthHandler(API_KEY, API_SECRET)
-auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
+auth = tweepy.OAuth1UserHandler(API_KEY, API_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 api = tweepy.API(auth, wait_on_rate_limit=True)
 
 
