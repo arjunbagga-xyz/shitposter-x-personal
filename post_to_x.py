@@ -89,6 +89,6 @@ def post_to_x():
         print(f"Failed to post: {response.text}")
 
 # Post to X
-post = generate_post()
+post = generate_shitpost()
 api.update_status(post)
 print(f"Posted to X: {post}")
