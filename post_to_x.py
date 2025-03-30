@@ -58,7 +58,7 @@ def generate_shitpost():
     prompt = (
         f"Analyse the posts on X related to {topic}, select the funniest trend with the most engagement, "
         f"and write an X post in the style of https://x.com/ArjunBagga_xyz. "
-        f"Make it insightful and humorous. Your response should be just the post, nothing else (under 200 characters and no hashtags)."
+        f"Make it related to the analysed trends, insightful, savage and  humorous. Your response should be just the post, nothing else (under 200 characters, no self-deprecating humor, emojis allowed and no hashtags)."
     )
     
     headers = {
