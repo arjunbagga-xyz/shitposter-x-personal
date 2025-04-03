@@ -32,35 +32,52 @@ client = tweepy.Client(
 # Generate post with Gemini API
 
 # Topics for shitposting
-TOPICS = [
-    "physics",
-    "AI",
-    "quantum mechanics",
-    "philosophy",
-    "biotechnology",
-    "crypto",
-    "cybersecurity",
-    "weapon technology",
-    "hacking",
-    "LLM",
-    "quant finance",
-    "healthcare",
-    "HFT",
-    "defence tech",
-    "robotics",
-    "algo trading",
-    "web3",
-    "tech"
-]
+TOPICS = {
+    "MIND": [
+        "physics",
+        "quantum mechanics",
+        "mathematics",
+        "philosophy",
+    ],
+    "SOFT_ENG": [
+        "AI",
+        "tech",
+        "hacking",
+        "cyber security",
+        "web3"
+    ],
+    "MONEY": [
+        "crypto",
+        "HFT",
+        "algo trading",
+        "quant finance",
+        "memes"
+    ],
+    "HARD_ENG": [
+        "biotechnology",
+        "weapon technology",
+        "defence tech",
+        "robotics",
+        "healthcare"
+    ],
+    "SAMAAJ": [
+        "movies",
+        "music",
+        "pop culture",
+        "MMA",
+        "travelling"
+    ]
+}
 
 # Function to generate a shitpost using Gemini
 def generate_shitpost():
-    topic = random.choice(TOPICS)  # Randomly select a topic
+    topic = random.choice(list(TOPICS.keys())) 
+    subtopic = random.choice(TOPICS[topic])  
     
     prompt = (
-        f"Analyse the posts on X related to {topic}, select the funniest trend with the most engagement, "
+        f"Analyse the posts on X related to {subtioic}, select the funniest trend with the most engagement, "
         f"and write an X post in the style of https://x.com/ArjunBagga_xyz. "
-        f"Make it related to the analysed trends, insightful, optimistic, savage and humorous. Your response should be just the post, nothing else (under 200 characters, no self-deprecating humor, no hashtags emojis allowed)."
+        f"Make it related to the analysed trends, sound human, thoughtful, one liner and funny. Your response should be just the post, nothing else (under 200 characters, emojis encouraged, no self-deprecating humor, no hashtags)."
     )
     
     headers = {
