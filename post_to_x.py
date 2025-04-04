@@ -63,6 +63,7 @@ TOPICS = {
     "SAMAAJ": [
         "movies",
         "music",
+        "dating",
         "pop culture",
         "MMA",
         "travelling"
