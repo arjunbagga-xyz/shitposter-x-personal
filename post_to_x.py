@@ -51,8 +51,7 @@ TOPICS = {
         "crypto",
         "HFT",
         "algo trading",
-        "quant finance",
-        "memes"
+        "quant finance"
     ],
     "HARD_ENG": [
         "nanotechnology",
@@ -63,7 +62,8 @@ TOPICS = {
         "movies",
         "dating",
         "pop culture",
-        "MMA"
+        "MMA",
+        "memes"
     ]
 }
 
@@ -72,7 +72,7 @@ def generate_shitpost():
     topic = random.choice(list(TOPICS.keys())) 
     subtopic = random.choice(TOPICS[topic])  
     
-    prompt = f"""What's an *unexpectedly* hilarious take on {subtopic}? Turn it into a super-short X post. Think inside joke, but funny enough for outsiders to *almost* get it.
+    prompt = f"""What's an *unexpectedly* hilarious, slightly philosophical take on {subtopic}? Turn it into a super-short X post. Think inside joke, but funny enough for outsiders to *almost* get it.
             no hashtags
             no need to quote it"""
 
