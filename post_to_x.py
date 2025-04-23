@@ -72,11 +72,9 @@ def generate_shitpost():
     topic = random.choice(list(TOPICS.keys())) 
     subtopic = random.choice(TOPICS[topic])  
     
-    prompt = f"""Analyse the posts on X related to {subtopic}, select the funniest trend with the most engagement, 
-        and write an X post in the style of https://x.com/ArjunBagga_xyz. 
-        Make it related to the analysed trends, sound human, thoughtful, and funny. 
-        Your response should be just the post, nothing else (under 200 characters, emojis encouraged, 
-        no self-deprecating humor, no hashtags, use "deep into niche" words)."""
+    prompt = f"""What's an *unexpectedly* hilarious take on {subtopic}? Turn it into a super-short X post. Think inside joke, but funny enough for outsiders to *almost* get it.
+            no hashtags
+            no need to quote it"""
 
     
     headers = {
