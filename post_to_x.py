@@ -74,9 +74,9 @@ def generate_shitpost():
     topic1 = random.choice(list(TOPICS.keys())) 
     subtopic1 = random.choice(TOPICS[topic1]) 
     
-    prompt = f"""What's an *unexpectedly* hilarious, slightly philosophical take combined from deep knowledge of {subtopic} and {subtopic1}? Turn it into a super-short X post. Think inside joke, but funny enough for outsiders to *almost* get it.
+    prompt = f"""What's an *unexpectedly* hilarious, slightly philosophical takeon {subtopic}? Turn it into a short X post. Think inside joke, but funny enough for outsiders to *almost* get it.
 
-no hashtags , emojis welcome,
+no hashtags , emojis welcome, no existential dread
 
 no need to quote it, output should be just the post, no explanation or narration of any kind"""
 
