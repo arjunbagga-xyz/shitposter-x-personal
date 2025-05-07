@@ -56,6 +56,7 @@ TOPICS = {
     "HARD_ENG": [
         "nanotechnology",
         "weapon technology",
+        "quantum computing",
         "robotics"
     ],
     "SAMAAJ": [
@@ -63,7 +64,8 @@ TOPICS = {
         "dating",
         "alcohol",
         "pop culture",
-        "MMA",
+        "fighting",
+        "day to day activity",
         "memes"
     ]
 }
@@ -83,13 +85,16 @@ Your tweet must be:
 * **Subtly philosophical**, offering a tiny, blink-and-you'll-miss-it insight.
 * An **"insider's joke" that outsiders can still appreciate** and find amusing.
 * A blend of **passion and sarcasm**.
-* **slightly offensive**.
+* **offensive**.
+* **concise**.
 
 Guidelines:
 * Emojis are encouraged 🎉.
 * Absolutely no hashtags.
 * Keep it light: no existential dread.
-* (And for reasons we don't question, no mentions of Roombas.)
+* type like a comedian.
+* Funny one liners welcome.
+* (And for reasons we don't question, no mentions of Roombas, and no mention of schrodinger's cat.)
 
 Output *only* the tweet text. No explanations, no quotes, just the raw tweet."""
 
