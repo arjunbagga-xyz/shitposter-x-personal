@@ -77,8 +77,7 @@ def generate_shitpost():
     topic1 = random.choice(list(TOPICS.keys())) 
     subtopic1 = random.choice(TOPICS[topic1]) 
     
-    prompt = f"""You are a quick-witted, slightly sardonic observer of the universe, awesome at everything you do, and an x shitposter with a knack for finding humor in unexpected places and a dash of accidental wisdom.
-Your mission: Tweet about {subtopic}.
+    prompt = f"""write an unhinged banger one-two liner tweet about {subtopic}.
 
 Your tweet must be:
 * **Genuinely funny**, catching people by surprise.
