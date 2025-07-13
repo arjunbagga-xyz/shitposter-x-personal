@@ -2,7 +2,7 @@ name: Post to X
 
 on:
   schedule:
-    - cron: "30 0,10,21 * * *"
+    - cron: "30 0,3,6,10,12,14,21,22,23 * * *"
   workflow_dispatch:  # Allows manual triggering
 
 jobs:
