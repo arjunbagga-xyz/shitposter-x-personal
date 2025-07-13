@@ -36,8 +36,7 @@ TOPICS = {
     "MIND": [
         "physics",
         "quantum mechanics",
-        "mathematics",
-        "philosophy"
+        "mathematics"
     ],
     "SOFT_ENG": [
         "AI",
@@ -77,7 +76,7 @@ def generate_shitpost():
     topic1 = random.choice(list(TOPICS.keys())) 
     subtopic1 = random.choice(TOPICS[topic1]) 
     
-    prompt = f"""write an unhinged banger one-two liner tweet about {subtopic}.
+    prompt = f"""write an unhinged banger one-two liner tweet about {subtopic}. a hot take with a call to action.
 
 Your tweet must be:
 * **Genuinely funny**, catching people by surprise.
@@ -92,6 +91,7 @@ Guidelines:
 * Absolutely no hashtags.
 * Keep it light: no existential dread.
 * type like a comedian.
+* no em dashes
 * Funny one liners welcome.
 * (And for reasons we don't question, no mentions of Roombas, and no mention of schrodinger's cat.)
 
