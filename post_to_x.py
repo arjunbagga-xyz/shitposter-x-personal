@@ -69,19 +69,75 @@ TOPICS = {
     ]
 }
 
+TOPIC_FANBASE = {
+    "TV": [
+        "Dragon Ball",
+        "Pokemon",
+        "Naruto",
+        "One Piece",
+        "How I met your mother",
+        "friends",
+        "Star Wars",
+        "Harry Potter",
+        "Marvel Cinematic Universe",
+        "Sherlock Holmes",
+        "Disney",
+        "anime",
+        "DC universe",
+        "Batman",
+        "Studio Ghibli",
+        "Lord of the Rings"
+    ],
+    "SPORTS": [
+        "Surfing",
+        "Skating",
+        "Swimming",
+        "Muay Thai",
+        "MMA",
+        "F1",
+        "Football"
+    ],
+    "MUSIC": [
+        "Eminem",
+        "ACDC",
+        "Billy Joel",
+        "Linkin Park",
+        "Snoop Dogg",
+        "Enrique Iglesias",
+        "Pitbull",
+        "BTS",
+        "Grateful Dead",
+        "BLACKPINK"
+    ],
+    "GAMES": [
+        "Minecraft",
+        "RGG studio's Yakuza series",
+        "Genshin Impact",
+        "Pokemon",
+        "Tomb Raider",
+        "Sonic the hedgehog",
+        "Devil May Cry",
+        "Budokai Tenkaichi",
+        "Call of Duty",
+        "Cyberpunk 2077",
+        "Grand theft Auto series",
+        "Witcher",
+        "Runescape",
+        "Tekken"
+    ]
 # Function to generate a shitpost using Gemini
 def generate_shitpost():
     topic = random.choice(list(TOPICS.keys())) 
     subtopic = random.choice(TOPICS[topic]) 
-    topic1 = random.choice(list(TOPICS.keys())) 
-    subtopic1 = random.choice(TOPICS[topic1]) 
+    topic1 = random.choice(list(TOPIC_FANBASE.keys())) 
+    subtopic1 = random.choice(TOPIC_FANBASE[topic1]) 
     
-    prompt = f"""write an unhinged banger one-two liner tweet about {subtopic}. a hot take with a call to action.
+    prompt = f"""write an unhinged banger one-two liner tweet about {subtopic} mixed with hummor or anecdote from {subtopic1}. a hot take with a call to action.
 
 Your tweet must be:
 * **Genuinely funny**, catching people by surprise.
 * **Subtly philosophical**, offering a tiny, blink-and-you'll-miss-it insight.
-* An **"insider's joke" that outsiders can still appreciate** and find amusing.
+* An **"insider's joke" that outsiders may or may not appreciate** and find amusing.
 * A blend of **passion and sarcasm**.
 * **offensive**.
 * **concise**.
@@ -91,6 +147,7 @@ Guidelines:
 * Absolutely no hashtags.
 * Keep it light: no existential dread.
 * type like a comedian.
+* unserious tonality
 * no em dashes
 * Funny one liners welcome.
 * (And for reasons we don't question, no mentions of Roombas, and no mention of schrodinger's cat.)
