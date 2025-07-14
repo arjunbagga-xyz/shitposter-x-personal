@@ -125,6 +125,8 @@ TOPIC_FANBASE = {
         "Runescape",
         "Tekken"
     ]
+}
+
 # Function to generate a shitpost using Gemini
 def generate_shitpost():
     topic = random.choice(list(TOPICS.keys())) 
