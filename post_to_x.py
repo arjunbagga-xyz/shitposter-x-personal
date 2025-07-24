@@ -142,7 +142,9 @@ Your tweet must be:
 * An **"insider's joke" that outsiders may or may not appreciate** and find amusing.
 * **offensive**.
 * **concise**.
-* in a form of a statement and a question.
+* ragebait
+* double check the abstraction logic
+* ABSOLUTELY NO "x is just like y", "x is basically y", etc. style of writing
 
 Guidelines:
 * Emojis are encouraged 🎉.
@@ -154,7 +156,7 @@ Guidelines:
 * ragebaiting encouraged
 * unserious tonality
 * no em dashes
-* ABSOLUTELY no "x is just like y", "x is basically y", etc. type of posts
+* ABSOLUTELY NO "x is just like y", "x is basically y", etc. style of writing
 * (And for reasons we don't question, no mentions of Roombas, and no mention of schrodinger's cat.)
 
 Output *only* the tweet text. No explanations, no quotes, just the raw tweet."""
