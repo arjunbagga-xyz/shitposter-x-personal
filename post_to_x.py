@@ -154,7 +154,7 @@ Guidelines:
 * ragebaiting encouraged
 * unserious tonality
 * no em dashes
-* no <topic1> is just like <topic2> style of posts.
+* ABSOLUTELY no "x is just like y", "x is basically y", etc. type of posts
 * (And for reasons we don't question, no mentions of Roombas, and no mention of schrodinger's cat.)
 
 Output *only* the tweet text. No explanations, no quotes, just the raw tweet."""
