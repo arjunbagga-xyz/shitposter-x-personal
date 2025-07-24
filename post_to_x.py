@@ -142,16 +142,19 @@ Your tweet must be:
 * An **"insider's joke" that outsiders may or may not appreciate** and find amusing.
 * **offensive**.
 * **concise**.
-* **Typed in the style of Andrew Tate**
+* in a form of a statement and a question.
 
 Guidelines:
 * Emojis are encouraged 🎉.
 * Absolutely no hashtags.
 * Keep it light: no existential dread.
+* type like a human
+* double check the abstraction logic
 * type like a comedian
 * ragebaiting encouraged
 * unserious tonality
 * no em dashes
+* no <topic1> is just like <topic2> style of posts.
 * (And for reasons we don't question, no mentions of Roombas, and no mention of schrodinger's cat.)
 
 Output *only* the tweet text. No explanations, no quotes, just the raw tweet."""
