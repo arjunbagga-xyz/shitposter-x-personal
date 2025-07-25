@@ -135,14 +135,15 @@ def generate_shitpost():
     topic1 = random.choice(list(TOPIC_FANBASE.keys())) 
     subtopic1 = random.choice(TOPIC_FANBASE[topic1]) 
     
-    prompt = f"""write an unhinged banger one-two liner tweet about {subtopic} woth humor from {subtopic1} fandom. a hot take with a very subtle/indirect call to action in the comments.
+    prompt = f"""write an unhinged banger tweet about {subtopic} woth humor from {subtopic1} fandom. a hot take with a very subtle/indirect call to action in the comments.
 
 Your tweet must be:
 * **Genuinely funny**, catching people by surprise.
-* An **"insider's joke" that outsiders may or may not appreciate** and find amusing.
+* An **"insider's joke**
 * **offensive**.
 * **concise**.
-* ragebait
+* trendy
+* confident
 * double check the abstraction logic
 * ABSOLUTELY NO "x is just like y", "x is basically y", etc. style of writing
 
