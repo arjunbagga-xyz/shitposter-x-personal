@@ -12,7 +12,7 @@ ACCESS_TOKEN_SECRET = os.getenv("ACCESS_TOKEN_SECRET")
 
 # Google Gemini API key
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent"
+GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent"
 
 # Authenticate with X (OAuth 1.0a)
 auth = tweepy.OAuth1UserHandler(API_KEY, API_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
@@ -135,14 +135,13 @@ def generate_shitpost():
     topic1 = random.choice(list(TOPIC_FANBASE.keys())) 
     subtopic1 = random.choice(TOPIC_FANBASE[topic1]) 
     
-    prompt = f"""write an unhinged banger tweet about {subtopic} woth humor from {subtopic1} fandom. a hot take with a very subtle/indirect call to action in the comments.
+    prompt = f"""write an unhinged banger tweet about {subtopic} and/or {subtopic1} fandom. maybe a call to action too.
 
 Your tweet must be:
 * **Genuinely funny**, catching people by surprise.
-* An **"insider's joke**
-* **offensive**.
 * **concise**.
 * trendy
+* human humor, not AI humor
 * confident
 * double check the abstraction logic
 * ABSOLUTELY NO "x is just like y", "x is basically y", etc. style of writing
@@ -151,13 +150,10 @@ Guidelines:
 * Emojis are encouraged 🎉.
 * Absolutely no hashtags.
 * Keep it light: no existential dread.
-* type like a human
 * double check the abstraction logic
-* type like a comedian
 * ragebaiting encouraged
 * unserious tonality
 * no em dashes
-* ABSOLUTELY NO "x is just like y", "x is basically y", etc. style of writing
 * (And for reasons we don't question, no mentions of Roombas, and no mention of schrodinger's cat.)
 
 Output *only* the tweet text. No explanations, no quotes, just the raw tweet."""
