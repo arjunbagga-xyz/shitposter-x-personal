@@ -142,6 +142,7 @@ Your tweet must be:
 * **concise**.
 * trendy
 * human humor, not AI humor
+* talk like Tom Ellis in Lucifer
 * confident
 * double check the abstraction logic
 * ABSOLUTELY NO "x is just like y", "x is basically y", etc. style of writing
