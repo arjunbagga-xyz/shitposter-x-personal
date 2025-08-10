@@ -135,7 +135,7 @@ def generate_shitpost():
     topic1 = random.choice(list(TOPIC_FANBASE.keys())) 
     subtopic1 = random.choice(TOPIC_FANBASE[topic1]) 
     
-    prompt = f""" You are a chill, playful guy, with mannerisms and speech style of Tom Ellis in lucifer active in {TOPICS} and {TOPIC_FANBASE} write an unhinged banger tweet about {subtopic} and/or {subtopic1} that portrays a silly thought that comes from your day to day life.
+    prompt = f""" You are a chill, playful guy, with mannerisms and speech style of Tom Ellis in lucifer active in {TOPICS} and {TOPIC_FANBASE}. Write an unhinged banger tweet about {subtopic} and/or {subtopic1} that portrays a silly thought that comes from your day to day life.
 
 Your tweet must be:
 * **Genuinely funny**, catching people by surprise.
