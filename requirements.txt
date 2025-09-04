@@ -1,4 +1,4 @@
 tweepy
 requests
-random
-os
+atproto
+neynar

@@ -2,6 +2,8 @@ import os
 import requests
 import random
 import tweepy
+from atproto import Client as BlueskyClient
+from neynar import NeynarClient
 
 
 # X API credentials from GitHub Secrets
@@ -10,24 +12,27 @@ API_SECRET = os.getenv("API_SECRET")
 ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
 ACCESS_TOKEN_SECRET = os.getenv("ACCESS_TOKEN_SECRET")
 
+# Bluesky credentials
+BLUESKY_USERNAME = os.getenv("BLUESKY_USERNAME")
+BLUESKY_PASSWORD = os.getenv("BLUESKY_PASSWORD")
+
+# Farcaster credentials
+FARCASTER_API_KEY = os.getenv("FARCASTER_API_KEY")
+FARCASTER_SIGNER_UUID = os.getenv("FARCASTER_SIGNER_UUID")
+
+
 # Google Gemini API key
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent"
 
-# Authenticate with X (OAuth 1.0a)
-auth = tweepy.OAuth1UserHandler(API_KEY, API_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
-api = tweepy.API(auth, wait_on_rate_limit=True)
-
-# Check which API version is being used
-print(api.auth.access_token)  # Should not be None
-
-client = tweepy.Client(
-    bearer_token=os.getenv("BEARER_TOKEN"),
+# Authenticate with X
+x_client = tweepy.Client(
     consumer_key=API_KEY,
     consumer_secret=API_SECRET,
     access_token=ACCESS_TOKEN,
     access_token_secret=ACCESS_TOKEN_SECRET
 )
+
 
 # Generate post with Gemini API
 
@@ -179,28 +184,52 @@ Output *only* the tweet text. No explanations, no quotes, just the raw tweet."""
         print(f"Gemini API Error: {response.text}")
         return None
 
-# Function to post a tweet
-def post_to_x():
-    shitpost = generate_shitpost()
-    if not shitpost:
-        print("Failed to generate a tweet.")
+# Function to post to X
+def post_to_x(text):
+    if not text:
+        print("No text to post to X.")
         return
-    
-    headers = {
-        "Authorization": f"Bearer {X_BEARER_TOKEN}",
-        "Content-Type": "application/json"
-    }
-    
-    payload = {"text": shitpost}
-    
-    response = requests.post(X_POST_URL, headers=headers, json=payload)
-    
-    if response.status_code == 201:
-        print(f"Posted: {shitpost}")
-    else:
-        print(f"Failed to post: {response.text}")
+    try:
+        x_client.create_tweet(text=text)
+        print(f"Posted to X: {text}")
+    except Exception as e:
+        print(f"Failed to post to X: {e}")
 
-# Post to X
-post = generate_shitpost()
-client.create_tweet(text=post)
-print(f"Posted to X: {post}")
+# Function to post to Bluesky
+def post_to_bluesky(text):
+    if not text:
+        print("No text to post to Bluesky.")
+        return
+    if not BLUESKY_USERNAME or not BLUESKY_PASSWORD:
+        print("Bluesky credentials not found. Skipping post.")
+        return
+    try:
+        bluesky_client = BlueskyClient()
+        bluesky_client.login(BLUESKY_USERNAME, BLUESKY_PASSWORD)
+        bluesky_client.post(text=text)
+        print(f"Posted to Bluesky: {text}")
+    except Exception as e:
+        print(f"Failed to post to Bluesky: {e}")
+
+# Function to post to Farcaster
+def post_to_farcaster(text):
+    if not text:
+        print("No text to post to Farcaster.")
+        return
+    if not FARCASTER_API_KEY or not FARCASTER_SIGNER_UUID:
+        print("Farcaster credentials not found. Skipping post.")
+        return
+    try:
+        farcaster_client = NeynarClient(api_key=FARCASTER_API_KEY)
+        farcaster_client.publish_cast(signer_uuid=FARCASTER_SIGNER_UUID, text=text)
+        print(f"Posted to Farcaster: {text}")
+    except Exception as e:
+        print(f"Failed to post to Farcaster: {e}")
+
+# Main execution
+if __name__ == "__main__":
+    post_content = generate_shitpost()
+    if post_content:
+        post_to_x(post_content)
+        post_to_bluesky(post_content)
+        post_to_farcaster(post_content)
